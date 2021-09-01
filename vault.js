@@ -1,55 +1,17 @@
-const { MongoClient } = require('mongodb');
-const { uuid } = require('uuidv4');
-
 function Vault() {
-  this.client = new MongoClient("TODO", { useNewUrlParser: true, useUnifiedTopology: true });
+  /*TODO*/
 }
 
 Vault.prototype.insert = async function (cardHolder, cardNumber, expDate) {
-  var cardHolderToken = uuid()
-  var cardNumberToken = uuid()
-  await this.client.connect()
-  const tokens = this.client.db('myVault').collection('tokens')
-  const cards = this.client.db('myVault').collection('cards')
-  await tokens.insertMany([
-    {
-      token: cardHolderToken,
-      value: cardHolder
-    },
-    {
-      token: cardNumberToken,
-      value: cardNumber
-    }
-  ])
-  await cards.insertOne({
-    cardHolder: cardHolderToken,
-    cardNumber: cardNumberToken,
-    expiryDate: expDate
-  })
-  return true
+  /* TODO */
 }
 
 Vault.prototype.get = async function() {
-  await this.client.connect()
-  const tokens = this.client.db('myVault').collection('tokens')
-  const cards = this.client.db('myVault').collection('cards')
-  cursor = await cards.find({})
-  results = []
-  await cursor.forEach(async (doc) => {
-    results.push(doc)
-  })
-  return results
+  /* TODO */
 }
 
 Vault.prototype.detokenize = async function(token) {
-  await this.client.connect()
-  const tokens = this.client.db('myVault').collection('tokens')
-  doc = await tokens.findOne({token: token})
-  if(doc) {
-    return doc.value
-  } else {
-    return null
-  }
+  /* TODO */
 }
 
 module.exports = Vault;
