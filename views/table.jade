@@ -1,0 +1,14 @@
+extends layout
+block content
+  table
+    tr
+      td Card Holder
+      td Card Number
+      td Expiry Date
+    each card, i in cards
+      tr
+        td
+          a(href='/detokenize/#{card.cardHolder}') !{card.cardHolder}
+        td
+          a(href='/detokenize/#{card.cardNumber}') !{card.cardNumber}
+        td !{card.expiryDate}
