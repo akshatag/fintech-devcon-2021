@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <title>Document</title>
+</head>
+<body>
+    <h1> Acme Pay</h1>
+    <p> Enter your credit card details below. </p>
+    <div>
+        <form action="/insert" id='cc_form' method='POST'>
+            <ul class="form-style-1">
+                <li>
+                    <label>Cardholder Name<span class="required">*</span></label>
+                    <input type="text" name="cardHolder" class="field-long" />
+                </li>
+                <li>
+                    <label>Card Number<span class="required">*</span></label>
+                    <input type="text" name="cardNumber" class="field-long" />
+                </li>
+                <li>
+                    <label>Expiry Date<span class="required">*</span></label>
+                    <input type="text" name="expiryDate" class="field" />
+                </li>
+                <li>
+                    <label>CVV<span class="required">*</span></label>
+                    <input type="text" name="cvv" class="field" />
+                </li>
+                <li>
+                    <input type="submit" value="Submit" />
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>

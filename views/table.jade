@@ -1,14 +1,16 @@
 extends layout
 block content
-  table
+  h1 Acme Database 
+  p Acme Corp's database contains no PCI data
+  table(style='margin-top: 30px')
     tr
       td Card Holder
       td Card Number
       td Expiry Date
     each card, i in cards
       tr
-        td
+        td(class='table-cell')
           a(href='/detokenize/#{card.cardHolder}') !{card.cardHolder}
-        td
+        td(class='table-cell')
           a(href='/detokenize/#{card.cardNumber}') !{card.cardNumber}
-        td !{card.expiryDate}
+        td(class='table-cell') !{card.expiryDate}
