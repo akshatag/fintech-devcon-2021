@@ -20,8 +20,8 @@ router.post('/insert', async function(req, res, next) {
   } else if(cardNumber.length != 16) {
     res.render('formError', {message: "Form error: Card number must be 16 digits"})
   } else {
-    await vault.insert(cardHolder, cardNumber, expiryDate)
-    res.redirect('/all')
+    var insert = await vault.insert(cardHolder, cardNumber, expiryDate)
+    res.json(insert)
   }
 })
 
